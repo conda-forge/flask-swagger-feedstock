@@ -1,6 +1,5 @@
 {% set name = "flask-swagger" %}
-{% set version = "0.2.13" %}
-{% set sha256 = "42420efbed1aad86f7ca6bb869df550e09591e1d540ebd3040c197906c0f0be6" %}
+{% set version = "0.2.14" %}
 
 package:
   name: {{ name|lower }}
@@ -9,11 +8,11 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: b4085f5bc36df4c20b6548cd1413adc9cf35719b0f0695367cd542065145294d
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
   entry_points:
@@ -27,7 +26,7 @@ requirements:
   run:
     - python
     - flask >=0.10
-    - pyyaml >=3.0
+    - pyyaml >=5.1
 
 test:
   commands:
